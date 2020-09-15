@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         model: [1, 2]
-        month: [1]
+        month: [1-2, 1-12]
         year: [2019]
     steps:
       - name: Backtest 2019.01
