@@ -1,0 +1,25 @@
+# yamllint disable rule:line-length
+---
+name: Huson 12
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - 'test-huson12'
+
+jobs:
+
+  Backtest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        month: [1]
+        year: [2019]
+    steps:
+      - name: Backtest 2019.01
+        uses: ea31337/mql-tester-action@master
+        with:
+          TestExpert: https://github.com/EA31337/Backtest-Tests/releases/download/ea-huson12/huson12.ex4
+          BtMonths: ${{ matrix.month }}
+          BtYears: ${{ matrix.year }}
