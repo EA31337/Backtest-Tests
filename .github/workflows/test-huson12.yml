@@ -10,10 +10,11 @@ on:
 
 jobs:
 
-  Backtest:
+  Backtest-Ticks:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        model: [1, 2]
         month: [1]
         year: [2019]
     steps:
@@ -21,5 +22,6 @@ jobs:
         uses: ea31337/mql-tester-action@master
         with:
           TestExpert: https://github.com/EA31337/Backtest-Tests/releases/download/ea-huson12/huson12.ex4
+          BtTestModel: ${{ matrix.model }}
           BtMonths: ${{ matrix.month }}
           BtYears: ${{ matrix.year }}
