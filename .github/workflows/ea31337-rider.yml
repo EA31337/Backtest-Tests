@@ -1,0 +1,25 @@
+# yamllint disable rule:line-length
+---
+name: EA31337 Rider
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches:
+      - 'test-ea31337-rider'
+
+jobs:
+
+  Backtest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        month: [1]
+        year: [2019]
+    steps:
+      - name: Backtest 2019.01
+        uses: ea31337/mql-tester-action@master
+        with:
+          TestExpert: https://github.com/EA31337/EA31337/releases/download/v1.080/EA31337-Rider-v1.080.ex4
+          BtMonths: ${{ matrix.month }}
+          BtYears: ${{ matrix.year }}
