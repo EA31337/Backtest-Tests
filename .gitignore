@@ -1,16 +1,15 @@
-# Node rules:
-## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+# Ignores compiled binary files.
+*.ex?
 
-## Dependency directory
-## Commenting this out is preferred by some people, see
-## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
-node_modules
+# Ignores temporary files.
+*.swp
+*~
 
-# Book build output
-_book
+# Ignores test results in HTML format.
+*.htm
 
-# eBook build output
-*.epub
-*.mobi
-*.pdf
+# Ignores test result logs.
+*.log
+
+# Ignores Finder metadata files on Mac
+.DS_Store
